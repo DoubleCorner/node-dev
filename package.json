@@ -1,0 +1,16 @@
+{
+  "name": "node-dev",
+  "version": "1.0.0",
+  "description": "node-dev",
+  "scripts": {},
+  "author": "DoubleCorner <peiwenqi.mcs@gmail.com> (https://github.com/DoubleCorner)",
+  "license": "ISC",
+  "dependencies": {
+    "hierarchical-clustering": "^1.1.0",
+    "ml-hclust": "^3.1.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9"
+  }
+}
