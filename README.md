@@ -1,3 +1,4 @@
 # node-dev
 
-node-test
+实时编译
+`./node_modules/.bin/tsc -p ./tsconfig.json --watch`

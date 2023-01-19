@@ -1,6 +1,18 @@
 import { agnes } from 'ml-hclust';
 const cluster = require('hierarchical-clustering');
+// Euclidean distance
+// function distance(a: number[], b: number[]) {
+//   var d = 0;
+//   for (var i = 0; i < a.length; i++) {
+//     d += Math.pow(a[i] - b[i], 2);
+//   }
+//   return Math.sqrt(d);
+// }
 
+// Single-linkage clustering
+// function linkage(distances: number[]) {
+//   return Math.min.apply(null, distances);
+// }
 const agnesData = [
   [1, 98.1],
   [1, 118.8],
@@ -10018,14 +10030,14 @@ for (let i = 0; i < loop; i++) {
   // });
   // const clusters = levels[levels.length - 1].clusters;
 
-  // const clusters = agnes(data, { method: 'complete' }).group(3).children || [];
-  // for (let j = 0; j < clusters.length; j++) {
-  //   const parentCluster = clusters[j];
-  //   parentCluster.traverse((cluster) => {
-  //     if (cluster.isLeaf) {
-  //       data[cluster.index][2] = j;
-  //     }
-  //   });
-  // }
+  const clusters = agnes(data, { method: 'complete' }).group(3).children || [];
+  for (let j = 0; j < clusters.length; j++) {
+    const parentCluster = clusters[j];
+    parentCluster.traverse((cluster) => {
+      if (cluster.isLeaf) {
+        data[cluster.index][2] = j;
+      }
+    });
+  }
   console.log(`${end}:`, +new Date() - nowDate, 'ms');
 }
